@@ -21,7 +21,25 @@ import os
 
 from pychrm.FeatureSet import *
 
+class MultipleRegressionFeatureWeights( ContinuousFeatureWeights ):
 
+		#================================================================
+	@classmethod
+	def NewFromFeatureSet( cls, training_set ):
+		"""Calculate regression parameters and correlation statistics that fully define
+		a continuous classifier.
+
+		At present the feature weights are proportional the Pearson correlation coefficient
+		for each given feature."""
+		
+		super( MultipleRegressionFeatureWeights, cls ).NewFromFeatureSet( training_set )
+		
+		#pseudocode:
+		#iterate over all features:
+		# get predicted values for each image
+		# do regression of ground truth to 
+		
+		
 def normalize_by_columns ( full_stack, mins = None, maxs = None ):
 	"""This is a global function to normalize a matrix by columns.
 	If numpy 1D arrays of mins and maxs are provided, the matrix will be normalized against these ranges
